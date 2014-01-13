@@ -1,0 +1,40 @@
+/////Lab Requirements
+
+
+isItaNumber will take a single string as a parameter
+isItaNumber will return true or false.  True when the parameter is a well-formed number. False otherwise.
+isItaNumber will recognize the following characters as valid: “0” through “9”, “+”, “-”, “.” (decimal point), “,” (comma).
+
+isItaNumber will return false for a zero length parameter
+isItaNumber will return true for well formed base 10 numbers written in US notation
+
+isItaNumber will have no I/O other than the parameter and return value
+isItaNumber will recognize as valid + and – signs when a) there is only one sign character, b) it must be the first character of the string
+isItaNumber will return false for strings that contain no digits
+
+isItaNumber will recognize as valid decimal points as long as there is no more than one.
+isItaNumber will recognize commas as valid when: a) commas are in the whole number part of the number, b) each comma has three whole number digits following it, c) At least one digit left of each comma, d) No more than 3 contiguous digits to the left of a comma
+
+
+
+1) create test cases (sample strings) that will show a success or failure
+	* examples:
+		123	returns T
+		0123456789	returns T
+		-1 and +1
+		1-  and 1+
+		123A
+		X040
+		$123
+		12+34  12-34
+		+12+
+		+-123
+		+
+		123.45
+		.34
+		-.34
+		.-4		F
+		123.45.
+
+
+2) Write the code for isItaNumber($string)
