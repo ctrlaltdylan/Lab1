@@ -35,7 +35,6 @@ function isItaNumber($string)
 	//Logic to check if $string is a valid number and meets ALL required criteria of such ...
 	if (preg_match('/^[+-]?[0-9]{1,3}(?:,?[0-9]{3})*(?:\.[0-9]{2})?$/', $string))
 	{
-		//Dylan - This regex almost works, it's supposed to validate numbers with commas like '12,323,553'
 		return True;
 	}
 	else
