@@ -11,10 +11,10 @@ $testArray = array(
 	'-1',
 	'+1-',
 	'aa4564345',
-	',12324',
+	',12324'
 	'123,123,123',
 	'12,3244,234',
-	'1234,231,212'
+	'1234,231,212',
 );
 
 $testOutput = array();
@@ -35,7 +35,7 @@ function isItaNumber($string)
 	{
 		return False;
 	}
-	elseif (preg_match('/[0-9]+(,[0-9]+)*/', $string))
+	elseif (preg_match('\A[0-9]{1,3}(,[0-9]{3})+', $string)
 	{
 		//Dylan - This regex almost works, it's supposed to validate numbers with commas like '12,323,553'
 		return False;
@@ -63,7 +63,7 @@ foreach($testArray as $testString)
 	}
 }
 
-echo print_r($testArray);
+
 
 
 
