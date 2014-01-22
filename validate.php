@@ -1,8 +1,19 @@
 <?php
 
-/// INFO 154 - Lab 1
-
-/// Dylan Pierce
+ /* *
+  * File:    validate.php 
+  * 
+  * Author:   Dylan Pierce | Carmine Valentino
+  * Date:     January 21 2014   
+  * Course:   INFO 154 
+  * 
+  * Summary of File: 
+  * 
+  *		Take string input as parameter look for well-formed numbers
+  *   	Return True if all Criteria for assignment is met and false otherwise.
+  *   
+  *
+  */
 
 $testArray = array(
 	'',
@@ -21,34 +32,20 @@ $testOutput = array();
 
 function isItaNumber($string)
 {
-	//Logic to check if $string is a valid number
-	//It's easier in this case to define what is NOT a valid number. Else, the string must be a valid number.
-	if($string === NULL)
-	{
-		return False;
-	}
-	elseif ($string === '')
-	{
-		return False;
-	}
-	elseif (!is_numeric($string) ) 
-	{
-		return False;
-	}
-	elseif (preg_match('/[0-9]+(,[0-9]+)*/', $string))
+	//Logic to check if $string is a valid number and meets ALL required criteria of such ...
+	if (preg_match('/^[+-]?[0-9]{1,3}(?:,?[0-9]{3})*(?:\.[0-9]{2})?$/', $string))
 	{
 		//Dylan - This regex almost works, it's supposed to validate numbers with commas like '12,323,553'
-		return False;
+		return True;
 	}
 	else
 	{
-		return True;
+		return False;
 	}
 
 }
 
-// Dylan - Looping through our test cases and applying isItaNumber to each test string
-// Also we are outputting to the browser if the case is True or False
+// outputting to the browser if the case is True or False
 foreach($testArray as $testString)
 {
 	if(isItaNumber($testString))
@@ -64,7 +61,4 @@ foreach($testArray as $testString)
 }
 
 echo print_r($testArray);
-
-
-
 ?>
